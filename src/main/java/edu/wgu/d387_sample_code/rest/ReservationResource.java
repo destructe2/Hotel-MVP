@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.print.attribute.standard.Media;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -152,5 +153,18 @@ public class ReservationResource {
 
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
+
+//    @RequestMapping(path ="/api", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<String> englishMessage() {
+//        String finalMessage = "Join us for an online presentation";
+//        return new ResponseEntity<String> (finalMessage, HttpStatus.OK);
+//    }
+//    @RequestMapping(path ="/api2", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<String> frenchMessage() {
+//        String finalMessage2 = "Join us for a presentation";
+//        return new ResponseEntity<String> (finalMessage2, HttpStatus.OK);
+//    }
+
+
 
 }

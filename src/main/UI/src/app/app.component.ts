@@ -27,8 +27,14 @@ export class AppComponent implements OnInit{
   request!:ReserveRoomRequest;
   currentCheckInVal!:string;
   currentCheckOutVal!:string;
+  message1!:Observable<string>
+  message2!:Observable<string>
 
     ngOnInit(){
+      this.message1 = this.httpClient.get(this.baseURL + '/api/english', {responseType: 'text'});
+      this.message2 = this.httpClient.get(this.baseURL + '/api/french', {responseType: 'text'});
+
+
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),
         checkout: new FormControl(' ')
@@ -82,6 +88,9 @@ export class AppComponent implements OnInit{
 
        return this.httpClient.get(this.baseURL + '/room/reservation/v1?checkin='+ this.currentCheckInVal + '&checkout='+this.currentCheckOutVal, {responseType: 'json'});
     }
+    // getWelcomeMessage(): Observable<any>{
+    //   return this.httpClient.get(this.baseURL + '/room/reservation/v1/api', {responseType: 'json'});
+    // }
 
   }
 
