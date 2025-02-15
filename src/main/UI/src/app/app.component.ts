@@ -29,10 +29,16 @@ export class AppComponent implements OnInit{
   currentCheckOutVal!:string;
   message1!:Observable<string>
   message2!:Observable<string>
+  time1!:Observable<string>
+  time2!:Observable<string>
+  time3!:Observable<string>
 
     ngOnInit(){
       this.message1 = this.httpClient.get(this.baseURL + '/api/english', {responseType: 'text'});
       this.message2 = this.httpClient.get(this.baseURL + '/api/french', {responseType: 'text'});
+      this.time1 = this.httpClient.get(this.baseURL + '/api/eTime', {responseType: 'text'});
+      this.time2 = this.httpClient.get(this.baseURL + '/api/mTime', {responseType: 'text'});
+      this.time3 = this.httpClient.get(this.baseURL + '/api/utcTime', {responseType: 'text'});
 
 
       this.roomsearch= new FormGroup({

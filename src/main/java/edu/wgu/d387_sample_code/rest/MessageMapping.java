@@ -1,12 +1,8 @@
 package edu.wgu.d387_sample_code.rest;
 
-import org.springframework.http.HttpStatus;
+import edu.wgu.d387_sample_code.D387SampleCodeApplication;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static edu.wgu.d387_sample_code.D387SampleCodeApplication.thread1;
 import static edu.wgu.d387_sample_code.D387SampleCodeApplication.thread2;
@@ -24,5 +20,20 @@ public class MessageMapping {
     public String frenchMessage() {
         String otherMessage = thread2;
         return otherMessage;
+    }
+    @RequestMapping(path ="/eTime", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String easternTime() {
+        String firstTime = D387SampleCodeApplication.timeEastern.toString();
+        return firstTime;
+    }
+    @RequestMapping(path ="/mTime", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String mountainTime() {
+        String secondTime = D387SampleCodeApplication.timeMountain.toString();
+        return secondTime;
+    }
+    @RequestMapping(path ="/utcTime", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String utcTime() {
+        String thirdTime = D387SampleCodeApplication.timeUTC.toString();
+        return thirdTime;
     }
 }

@@ -39,6 +39,10 @@
             <img src="assets/images/intro_attractions.jpg" alt="Intro Gallery Attractions Sample Pictures">
             <img class="hidesm" src="assets/images/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures">
           </div>
+          <h1>Join us for an online live presentation held at the London Hotel</h1>
+          <p>Eastern Time - {{time1 | async}}</p>
+          <p>Mountain Time - {{time2 | async}}</p>
+          <p>UTC Time - {{time3 | async}}</p>
           <h1>Book a Room</h1>
           <form class="form-horizontal" [formGroup]="roomsearch"
           (ngSubmit)="onSubmit(roomsearch)">
